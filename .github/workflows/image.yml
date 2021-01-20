@@ -1,4 +1,5 @@
 name: Push to GCR GitHub Action
+
 on:
   push:
     tags:
