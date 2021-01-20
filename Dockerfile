@@ -8,3 +8,4 @@ COPY . ./
 
 RUN pip install poetry && poetry install
 
+ENTRYPOINT ["poetry","run","saunadge"]
