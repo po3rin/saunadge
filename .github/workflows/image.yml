@@ -1,4 +1,4 @@
-name: Push to GCR GitHub Action
+name: Build Image
 
 on:
   push:
