@@ -1,9 +1,11 @@
 name: Build Image
 
-on:
-  push:
-    tags:
-    - '*'
+# on:
+#   push:
+#     tags:
+#     - '*'
+
+on: [push]
 
 jobs:
   build-and-push-to-gcr:
@@ -12,6 +14,11 @@ jobs:
       - name: Get the version
         id: get_tag_name
         run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
+
+      - name: debug
+        id: debug
+        run: pwd && ls
+
       - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
