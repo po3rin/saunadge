@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "saunadge"
+version = "0.1.0"
+description = ""
+authors = ["po3rin"]
+
+[tool.poetry.scripts]
+saunadge = "saunadge.server:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+beautifulsoup4 = "^4.9.3"
+requests = "^2.25.1"
+Flask = "^1.1.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
