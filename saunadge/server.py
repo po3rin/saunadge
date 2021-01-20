@@ -1,4 +1,5 @@
 import requests
+import os
 from bs4 import BeautifulSoup
 from flask import Flask
 
@@ -17,16 +18,18 @@ def tonttu_badge(user_id):
         .find_all("li", class_="p-localNav_link")[0].find("span")
         .find("span", class_="p-localNav_count").get_text().strip()
     )
+
     return {
         "schemaVersion": 1,
-        "label": int(sakatsu),
-        "message": sakatsu,
+        "label": "sakatsu",
+        "message": int(sakatsu),
         "color": "0051e0",
     }
 
 
 def main():
-    app.run()
+    app.run(debug=False, host="0.0.0.0",
+            port=int(os.environ.get("PORT", 8080)))
 
 
 if __name__ == "__main__":
