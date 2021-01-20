@@ -1,28 +1,41 @@
-name: Build Image
+name: Build image
 
-# on:
-#   push:
-#     tags:
-#     - '*'
-
-on: [push]
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
-  build-and-push-to-gcr:
+  build:
+    name: Build image
     runs-on: ubuntu-latest
+
+    env:
+      HASH: $(git rev-parse --short "$GITHUB_SHA")
+      BRANCH: ${GITHUB_REF##*/}
+      SERVICE_NAME: saunadge-api
+      PROJECT_ID: blog-301316
+
     steps:
-      - name: Get the version
-        id: get_tag_name
-        run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: debug
-        id: debug
-        run: pwd && ls
-
-      - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+      # Setup gcloud CLI
+      - uses: google-github-actions/setup-gcloud@master
         with:
-          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
-          registry: gcr.io
-          project_id: saunadge
-          image_name: saunadge-api
-          image_tag: ${{ steps.get_tag_name.outputs.GIT_TAG_NAME}}
+          service_account_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          project_id: blog-301316
+          export_default_credentials: true
+
+      # Build docker image
+      - name: Image Build
+        run: |-
+          docker build -t asia.gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA .
+      # Configure docker to use the gcloud command-line tool as a credential helper
+      - name: GCP Auth
+        run: |
+          gcloud auth configure-docker -q
+      # Push image to Google Container Registry
+      - name: Image Push to GCR
+        run: |-
+          docker push asia.gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA
