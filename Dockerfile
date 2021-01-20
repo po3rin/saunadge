@@ -8,5 +8,3 @@ COPY . ./
 
 RUN pip install poetry && poetry install
 
-CMD poetry run saunadge
-
