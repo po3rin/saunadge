@@ -1,5 +1,7 @@
 # saunadge
 
+![Build image](https://github.com/po3rin/saunadge/workflows/Build%20image/badge.svg)
+
 saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge server aggregates from the data over [SAUNA-IKITAI](https://sauna-ikitai.com/).
 
 ## example
