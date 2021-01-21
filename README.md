@@ -15,6 +15,8 @@ First of all,  you must get <sauna-ikitai-id>.
 $ https://sauna-ikitai.com/saunners/<sauna-ikitai-id> 
 ```
 
+sakatsu badge is generated from saunadge command.
+
 ```sh
 $ pip install saunadge
 $ saunadge -i <saunaikitai-id>
