@@ -7,7 +7,6 @@ WORKDIR $APP_HOME
 COPY . ./
 
 RUN pip install poetry && \
-	poetry install
+	poetry config virtualenvs.create false && poetry install --no-dev
 
-EXPOSE 8000
-ENTRYPOINT ["poetry", "run", "gunicorn", "-w", "1", "--bind", "0.0.0.0:8080", "saunadge.server:app"]
+CMD exec  poetry run POETRY_HOME=. gunicorn -w 1 -b 0.0.0.0:8080 saunadge.server:main
