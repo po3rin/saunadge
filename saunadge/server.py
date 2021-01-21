@@ -24,7 +24,7 @@ def tonttu_badge(user_id):
         "label": "sakatsu",
         "message": int(sakatsu),
         "color": "0051e0",
-        "cacheSecondsDefault": 1800,
+        "cacheSeconds": 1800,
     }
 
 
