@@ -6,6 +6,8 @@ import argparse
 import logging
 
 app = Flask(__name__)
+app.logger.setLevel(logging.ERROR)
+
 
 BASE_URL = "https://sauna-ikitai.com/saunners/"
 
@@ -49,6 +51,5 @@ def cli():
 
 
 if __name__ == "__main__":
-    app.logger.setLevel(logging.ERROR)
     app.run(debug=False, host="0.0.0.0",
             port=int(os.environ.get("PORT", 8080)))

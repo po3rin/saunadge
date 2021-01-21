@@ -1,11 +1,10 @@
 [tool.poetry]
 name = "saunadge"
 version = "0.1.0"
-description = ""
+description = "saunadge lets you to generate sakatsu(サ活/サウナ活動) badge. saunadge server aggregates from the data over"
 authors = ["po3rin"]
-repository = "http://github.com/po3rin/saunadge"
-homepage = "http://github.com/po3rin/saunadge"
-readme = "README.md"
+repository = "https://github.com/po3rin/saunadge"
+homepage = "https://github.com/po3rin/saunadge"
 license = "Apache-2.0"
 
 [tool.poetry.scripts]
