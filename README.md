@@ -4,7 +4,11 @@
 [![PyPi version](https://img.shields.io/pypi/v/saunadge.svg)](https://pypi.python.org/pypi/saunadge/)
 [![](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
 
----
+
+saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge server aggregates from the data over [SAUNA-IKITAI](https://sauna-ikitai.com/).
+
+
+## Example
 
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=for-the-badge)](https://sauna-ikitai.com/saunners/46531)
   
@@ -15,7 +19,6 @@
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat)](https://sauna-ikitai.com/saunners/46531)
 
 
-saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge server aggregates from the data over [SAUNA-IKITAI](https://sauna-ikitai.com/).
 
 ## Usage
 
