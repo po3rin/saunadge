@@ -22,7 +22,7 @@ def tonttu_badge(user_id):
     return {
         "schemaVersion": 1,
         "label": "sakatsu",
-        "message": int(sakatsu),
+        "message": sakatsu,
         "color": "0051e0",
         "cacheSeconds": 1800,
     }
