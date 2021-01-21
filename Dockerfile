@@ -9,4 +9,4 @@ COPY . ./
 RUN pip install poetry && \
 	poetry config virtualenvs.create false && poetry install --no-dev
 
-CMD exec  poetry run gunicorn -w 1 -b 0.0.0.0:8080 saunadge.server:app
+CMD exec  poetry run gunicorn -w 1 -b 0.0.0.0:8080 --log-level error saunadge.server:app
