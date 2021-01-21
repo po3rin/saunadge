@@ -5,7 +5,7 @@ description = ""
 authors = ["po3rin"]
 
 [tool.poetry.scripts]
-saunadge = "saunadge.server:main"
+saunadge = "saunadge.server:cli"
 
 [tool.poetry.dependencies]
 python = "^3.9"
