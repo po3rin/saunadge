@@ -10,6 +10,8 @@ saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge ser
 
 ## Example
 
+You can decide the format with `format` option.
+
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=for-the-badge)](https://sauna-ikitai.com/saunners/46531)
   
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat-square)](https://sauna-ikitai.com/saunners/46531)
@@ -17,7 +19,6 @@ saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge ser
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=plastic)](https://sauna-ikitai.com/saunners/46531)
   
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat)](https://sauna-ikitai.com/saunners/46531)
-
 
 
 ## Usage
