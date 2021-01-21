@@ -8,6 +8,13 @@ saunadge lets you to generate sakatu(サ活/サウナ活動) badge. saunadge ser
 
 ## Usage
 
+First of all,  you must get <sauna-ikitai-id>.
+<sauna-ikitai-id> can be obtained from the url of the user page
+
+```sh
+$ https://sauna-ikitai.com/saunners/<sauna-ikitai-id> 
+```
+
 ```sh
 $ pip install saunadge
 $ saunadge -i <saunaikitai-id>
