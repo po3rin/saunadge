@@ -1,7 +1,4 @@
-<p align="center">
-  <h3 align="center">saunadge</h3>
-  <p align="center"></p>
-</p>
+# saunadge
 
 ![Build image](https://github.com/po3rin/saunadge/workflows/Build%20image/badge.svg)
 [![PyPi version](https://img.shields.io/pypi/v/saunadge.svg)](https://pypi.python.org/pypi/saunadge/)
