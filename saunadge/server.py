@@ -44,7 +44,7 @@ def cli():
     args = parser.parse_args()
     id = args.id
     print(
-        f"[![sakatsu badge](https://img.shields.io/endpoint?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style=flat-square)](https://sauna-ikitai.com/saunners/{id})")
+        f"[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style=flat-square)](https://sauna-ikitai.com/saunners/{id})")
 
 
 if __name__ == "__main__":

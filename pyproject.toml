@@ -3,6 +3,10 @@ name = "saunadge"
 version = "0.1.0"
 description = ""
 authors = ["po3rin"]
+repository = "http://github.com/po3rin/saunadge"
+homepage = "http://github.com/po3rin/saunadge"
+readme = "README.md"
+license = "Apache-2.0"
 
 [tool.poetry.scripts]
 saunadge = "saunadge.server:cli"
