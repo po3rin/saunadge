@@ -24,13 +24,10 @@ def tonttu_badge(user_id):
         "label": "sakatsu",
         "message": int(sakatsu),
         "color": "0051e0",
+        "cacheSecondsDefault": 1800,
     }
 
 
-def main():
+if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0",
             port=int(os.environ.get("PORT", 8080)))
-
-
-if __name__ == "__main__":
-    main()

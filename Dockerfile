@@ -7,8 +7,7 @@ WORKDIR $APP_HOME
 COPY . ./
 
 RUN pip install poetry && \
-	poetry config settings.virtualenvs.create false && \
-	poetry install -n
+	poetry install
 
 EXPOSE 8000
-ENTRYPOINT ["poetry","run","saunadge"]
+ENTRYPOINT ["poetry", "run", "gunicorn", "-w", "1", "--bind", "0.0.0.0:8080", "saunadge.server:app"]
