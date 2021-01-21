@@ -1,0 +1,3 @@
+[console_scripts]
+saunadge = saunadge.server:main
+
