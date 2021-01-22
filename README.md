@@ -23,7 +23,7 @@ You can decide the format with `format` option.
 
 ## Usage
 
-First of all,  you must get <sauna-ikitai-id>.
+First of all,  you must get sauna-ikitai-id.
 <sauna-ikitai-id> can be obtained from the url of the user page
 
 ```sh
