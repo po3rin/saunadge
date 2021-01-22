@@ -11,9 +11,7 @@ app.logger.setLevel(logging.ERROR)
 
 BASE_URL = "https://sauna-ikitai.com/saunners/"
 
-parser = argparse.ArgumentParser(
-    description="generate sakatsu badge from SAUNA IKITAI"
-)
+parser = argparse.ArgumentParser(description="generate sakatsu badge from SAUNA IKITAI")
 parser.add_argument(
     "-i",
     "--id",
@@ -27,10 +25,17 @@ def tonttu_badge(user_id):
     res = requests.get(BASE_URL + f"{user_id}")
     soup = BeautifulSoup(res.text, "html.parser")
 
-    sakatsu = (soup.find('body').find('div', class_='l-containers js-containers').find(
-        'div', class_='l-content is-noPaddingBottom').find('div', class_='p-mypage').find("ul", class_="p-localNav_links js-swipeScrollInner is-noborder")
-        .find_all("li", class_="p-localNav_link")[0].find("span")
-        .find("span", class_="p-localNav_count").get_text().strip()
+    sakatsu = (
+        soup.find("body")
+        .find("div", class_="l-containers js-containers")
+        .find("div", class_="l-content is-noPaddingBottom")
+        .find("div", class_="p-mypage")
+        .find("ul", class_="p-localNav_links js-swipeScrollInner is-noborder")
+        .find_all("li", class_="p-localNav_link")[0]
+        .find("span")
+        .find("span", class_="p-localNav_count")
+        .get_text()
+        .strip()
     )
 
     return {
@@ -47,9 +52,9 @@ def cli():
     args = parser.parse_args()
     id = args.id
     print(
-        f"[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style=flat-square)](https://sauna-ikitai.com/saunners/{id})")
+        f"[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style=flat-square)](https://sauna-ikitai.com/saunners/{id})"
+    )
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0",
-            port=int(os.environ.get("PORT", 8080)))
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
