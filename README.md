@@ -47,3 +47,6 @@ format for Markdown
 ```sh
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/<saunai-kitai-id>&style=flat-square)](https://sauna-ikitai.com/saunners/<saunai-kitai-id>)
 ```
+
+## TODO
+- [ ] custom format flag
