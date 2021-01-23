@@ -5,6 +5,8 @@ from flask import Flask
 import argparse
 import logging
 
+from .__init__ import __version__
+
 app = Flask(__name__)
 app.logger.setLevel(logging.ERROR)
 
@@ -52,16 +54,21 @@ def get_sakatsu(html: str) -> str:
 
 @app.route("/api/v1/badge/<int:user_id>")
 def sakatsu_badge(user_id):
+    headers = {
+        "User-Agent": f"saunadge/{__version__} (https://github.com/po3rin/saunadge)"}
     try:
-        res = requests.get(BASE_URL + f"{user_id}")
-    except requests.exceptions.ConnectTimeout:
+        res = requests.get(BASE_URL + f"{user_id}", headers=headers)
+    except requests.exceptions.ConnectTimeout as e:
+        logging.error(e)
         return error_badge("timeout")
-    except requests.exceptions.ConnectionError:
+    except requests.exceptions.ConnectionError as e:
+        logging.error(e)
         return error_badge("error")
 
     try:
         sakatsu = get_sakatsu(res.text)
-    except AttributeError:
+    except (AttributeError, IndexError) as e:
+        logging.error(e)
         return error_badge("error")
 
     return {"schemaVersion": 1,
