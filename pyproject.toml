@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "saunadge"
-version = "0.1.0"
+version = "0.2.0"
 description = "saunadge lets you to generate sakatsu(サ活/サウナ活動) badge. saunadge server aggregates from the data over"
 authors = ["po3rin"]
 repository = "https://github.com/po3rin/saunadge"
@@ -16,6 +16,7 @@ beautifulsoup4 = "^4.9.3"
 requests = "^2.25.1"
 Flask = "^1.1.2"
 gunicorn = "^20.0.4"
+lxml = "^4.6.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
