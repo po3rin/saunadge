@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.logger.setLevel(logging.ERROR)
 
 
-BASE_URL = "https://suna-ikitai.com/saunners/"
+BASE_URL = "https://sauna-ikitai.com/saunners/"
 
 parser = argparse.ArgumentParser(
     description="generate sakatsu badge from SAUNA IKITAI")
