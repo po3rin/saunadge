@@ -10,18 +10,28 @@ from .__init__ import __version__
 app = Flask(__name__)
 app.logger.setLevel(logging.ERROR)
 
-
 BASE_URL = "https://sauna-ikitai.com/saunners/"
 
 parser = argparse.ArgumentParser(
     description="generate sakatsu badge from SAUNA IKITAI")
+
+parser = argparse.ArgumentParser(
+    description="badge format")
+
+parser.add_argument(
+    "-s",
+    "--style",
+    default="flat-square",
+    choices=["for-the-badge", "flat-square", "plastic", "flat"],
+    help="badge style",
+)
+
 parser.add_argument(
     "-i",
     "--id",
     required=True,
     help="sauna-ikitai id",
 )
-
 
 def error_badge(msg: str) -> str:
     return {
@@ -83,8 +93,9 @@ def sakatsu_badge(user_id):
 def cli():
     args = parser.parse_args()
     id = args.id
+    style = args.style
     print(
-        f"[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style=flat-square)](https://sauna-ikitai.com/saunners/{id})"
+        f"[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/{id}&style={style})](https://sauna-ikitai.com/saunners/{id})"
     )
 
 

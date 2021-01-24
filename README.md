@@ -10,16 +10,13 @@ saunadge lets you to generate sakatsu(サ活/サウナ活動) badge. saunadge se
 
 ## Example
 
-You can decide the format with `format` option.
+You can decide the badge style with `style` option.
 
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=for-the-badge)](https://sauna-ikitai.com/saunners/46531)
   
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat-square)](https://sauna-ikitai.com/saunners/46531)
   
-[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=plastic)](https://sauna-ikitai.com/saunners/46531)
-  
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat)](https://sauna-ikitai.com/saunners/46531)
-
 
 ## Usage
 
@@ -34,11 +31,9 @@ sakatsu badge is generated from saunadge command.
 
 ```sh
 $ pip install saunadge
-$ saunadge -i <saunaikitai-id>
+$ saunadge -i <saunaikitai-id> -s flat-square
 [![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat-square)](https://sauna-ikitai.com/saunners/46531)
 ```
-
-[![sakatsu badge](https://img.shields.io/endpoint.svg?url=https://saunadge-gjqqouyuca-an.a.run.app/api/v1/badge/46531&style=flat-square)](https://sauna-ikitai.com/saunners/46531)
 
 ## Badge
 
@@ -49,4 +44,4 @@ format for Markdown
 ```
 
 ## TODO
-- [ ] custom format flag
+- [ ] custom color
