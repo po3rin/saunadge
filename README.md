@@ -7,6 +7,8 @@
 
 saunadge lets you to generate sakatsu(サ活/サウナ活動) badge. saunadge server aggregates from the data over [SAUNA-IKITAI](https://sauna-ikitai.com/).
 
+saunadge API moves anothor repository. CLI will continue to be managed in this repository.
+https://github.com/po3rin/saunadge-rs
 
 ## Example
 
